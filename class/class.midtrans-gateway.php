@@ -162,6 +162,9 @@
           wc_reduce_stock_levels($order);
         }
 
+        // Ubah status order jadi on-hold
+        $order->update_status( 'on-hold' );
+        
         $successResponse['redirect'] = $redirectUrl;
         return $successResponse;
       }
